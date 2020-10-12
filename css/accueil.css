@@ -1,0 +1,18 @@
+body{
+    background-color: #afc013;
+}
+.voyage
+{
+    width:50%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color:  #9edfe7 ;
+    border: 10mm double rgba(233, 195, 235, 0.6);
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: circle;
+}
