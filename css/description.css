@@ -7,7 +7,13 @@ body {
 h1{
     color:#B22222;
 }
+.planing{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  
 
+ }
 h2{
     color:#778899;
     text-decoration: underline;
@@ -57,10 +63,4 @@ h3{
   }
 
 
- .planing{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  
-
- }
+ 
