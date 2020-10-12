@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="./css/Formulaire-CSS.css">
+    <link rel="stylesheet" href="../css/Formulaire-CSS.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
@@ -10,10 +10,10 @@
     <div class="container">
     <form>Personne n°1<br/><br/>
         Nom :<br/>
-        <input type="text" name="firstname" value="DUPONT"><br/><br/>
+        <input type="text" name="firstname" placeholder="DUPONT"><br/><br/>
 
         Prénom :<br/>
-        <input type="text" name="lastname" value="Jean"><br/><br/>
+        <input type="text" name="lastname" placeholder="Jean"><br/><br/>
 
         Sexe :<br/>
         <input type="radio" name="sexe" value="homme" checked>Homme
@@ -23,10 +23,10 @@
         <input type="number" name="age" value="1"><br/><br/>
 
         Téléphone :<br/>
-        <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="0123456789"><br/><br/>
+        <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="0123456789"><br/><br/>
 
         Adresse mail :<br/>
-        <input type="email" name="email" value="jean.dupont@gmail.fr"><br/><br/>
+        <input type="email" name="email" placeholder="jean.dupont@gmail.fr"><br/><br/>
 
         Petit déjeuner :
         <input type="radio" name="petit_dej" value="oui" checked>Oui
@@ -37,8 +37,8 @@
     </form>
     </div>
     <p>Prix 600€</p>
-    <a href="description_ankara.html"><button type="button">Payer</button></a>  
-    <a href="projet_site.html"><button type="button">Retour à l'accueil</button></a>  
+    <a href="description_ankara.html"><button class="button"><span>Payer</span></button>
+    <a href="projet_site.html"><button class="button"><span>Retour à l'acceuil</span></button>
 
 </body>
 </html>
