@@ -1,4 +1,8 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    background-color:#A9A9A9;;
+    padding: 20px;}
 * {box-sizing: border-box;}
 h1{
     color:#B22222;
@@ -49,11 +53,8 @@ h2{
   }
 
 
-  
-  .presentation {
-    border-radius: 5px;
-    background-color:#A9A9A9;;
-    padding: 20px;
-  }
+ .planing{
+    display: flex;
+    flex-direction: row;  
 
-  
+ }
