@@ -12,6 +12,10 @@ h2{
     color:#778899;
     text-decoration: underline;
 }
+h3{
+    widows: 50%;
+    color:#0000CD;
+}
 .button {
     border-radius: 4px;
     background-color: #D8BFD8;
@@ -55,6 +59,8 @@ h2{
 
  .planing{
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
+    flex-wrap: wrap;
+  
 
  }
