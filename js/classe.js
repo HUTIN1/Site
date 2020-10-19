@@ -1,18 +1,31 @@
 class Voyage {
-    destination(ville,pays){
+    constructor(ville,prix,image,enfant,repas,animaux){
         this._ville=ville;
-        this._pays=pays;
-    }
-    petite_description(prix,nbjour,nbplace,meteo,date){
         this._prix=prix;
-        this._nbjour=nbjour;
-        this._nbplace=nbplace;
-        this._meteo=meteo;
-        this._date=date;
+        this._image=image;
+        this._enfant=enfant;
+        this._repas=repas;
+        this._animaux=animaux
     }
-    grande_description(descritpion,jliste,jdescription){
-        this._descritption=descritpion;
-        this._jliste=liste;    //"liste des jours du voyage"
-        this._jdescription=jdescription;  //"liste de description de chaque jour"
+    get presentation(){
+        return this._ville, this._prix, this._enfant, this._repas, this._aniamux
     }
 }
+
+const nb1=new Voyage(
+    ville="Monaco",
+    prix=100,
+    image="monaco.jpg",
+    enfant="pas autoriser",
+    repas="steak frite",
+    animaux="pas autoriser"
+)
+
+const nb2=new Voyage(
+    ville="Ankara",
+    prix=300,
+    image="ankara.jpg",
+    enfant="pas autoriser",
+    repas="couscous",
+    animaux="pas autoriser"
+)
