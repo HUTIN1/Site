@@ -16,6 +16,8 @@ class Voyage {
 
 const nb1=new Voyage(
     ville="Monaco",
+    id1=1,
+    id2=2,
     prix=100,
     image="monaco.jpg",
     enfant="pas autoriser",
@@ -62,6 +64,7 @@ function addElement(id1,id2, ville,prix,enfant,repas,animaux){
     element1.textContent=animaux;
     document.getElementById(id2).appendChild(element5);
 
+    console.log("test");
 }
 
 addElement(nb2.get());
