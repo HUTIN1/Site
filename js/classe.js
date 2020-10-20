@@ -35,14 +35,15 @@ const lvoyage=[nb1,nb2];
 var div1 = document.getElementsByClassName("toutvoyage")[0];
 
 for (i of lvoyage){
+    console.log(i);
     div1.innerHTML += `<div class="affvoyage">
-    <a href="formulaire.html"><img src="`+i.image+`"width="500" height="300" alt="Photo"`+i.ville+`></a>
+    <a href="formulaire.html"><img src="`+i._image+`" alt="Photo"`+i._ville+`></a>
     <ul>
-        <li>`+i.ville+`</li>
-        <li>prix`+i.prix+`</li>
-        <li>enfant `+i.enfant+`</li>
-        <li>repas du voyage`+i.repas+`</li>
-        <li>animaux`+i.animaux+`</li>
+        <li>`+i._ville+`</li>
+        <li>prix`+i._prix+`</li>
+        <li>enfant `+i._enfant+`</li>
+        <li>repas du voyage `+i._repas+`</li>
+        <li>animaux `+i._animaux+`</li>
     </ul> 
 </div>`
 }

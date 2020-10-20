@@ -1,9 +1,14 @@
 body{
     background-color: #afc013;
 }
+
+img{
+    width: 100%;
+
+}
 .affvoyage
 { 
-    width:50%;
+    width:70%;
     margin: auto;
     text-align: center;
     display: flex;
@@ -13,6 +18,7 @@ body{
     border-radius: 10px;
     margin-top: 1%;
     margin-bottom: 1%;
+    font-size: 40px;
 }
 
 ul {
