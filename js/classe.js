@@ -53,7 +53,7 @@ function weather(voyage){
             <li>enfant `+voyage._enfant+`</li>
             <li>repas du voyage `+voyage._repas+`</li>
             <li>animaux `+voyage._animaux+`</li>
-            <li>température`+voyage._weather+`°C<li>
+            <li>température`+voyage._weather+`<li>
         </ul> 
     </div>`});
 };
