@@ -1,11 +1,12 @@
 class Voyage {
-    constructor(ville,prix,image,enfant,repas,animaux){
+    constructor(ville,prix,image,enfant,repas,animaux,idd){
         this._ville=ville;
         this._prix=prix;
         this._image=image;
         this._enfant=enfant;
         this._repas=repas;
         this._animaux=animaux;
+        this._idd=idd;
     }
     get (){
         return  this._ville, this._prix, this._enfant, this._repas, this._animaux
@@ -18,7 +19,8 @@ const nb1=new Voyage(
     image="../images/monaco.jpg",
     enfant="pas autoriser",
     repas="steak frite",
-    animaux="pas autoriser"
+    animaux="pas autoriser",
+    idd=1
 )
 
 const nb2=new Voyage(
@@ -27,7 +29,8 @@ const nb2=new Voyage(
     image="../images/ankara.jpg",
     enfant="pas autoriser",
     repas="couscous",
-    animaux="pas autoriser"
+    animaux="pas autoriser",
+    idd=2
 )
 
 const lvoyage=[nb1,nb2];
