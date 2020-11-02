@@ -20,7 +20,7 @@ const nb1=new Voyage(
     enfant="pas autoriser",
     repas="steak frite",
     animaux="pas autoriser",
-    idd=1
+    idd=5
 )
 
 const nb2=new Voyage(
