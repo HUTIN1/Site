@@ -13,9 +13,11 @@ body {
 
   .colonne {
     float: left;
-    width: 33.3%;
+    width: 50%;
     margin-bottom: 16px;
-    padding: 0 8px;
+    padding: 0 8px
+    display: flex;
+    flex-direction: column;
   }
   
 
@@ -33,6 +35,7 @@ body {
   
   
   .title {
+
     color: #50403e;
   }
   
