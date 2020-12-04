@@ -46,7 +46,7 @@ function weather(voyage){
         voyage.set(data.main.temp);
         console.log(voyage);   
         div1.innerHTML += `<div class="affvoyage">
-        <a href="formulaire.html"><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+`></a>
+        <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
             <li>`+voyage._ville+`</li>
             <li>prix`+voyage._prix+`</li>
@@ -65,6 +65,9 @@ var div1 = document.getElementsByClassName("toutvoyage")[0];
 for (i of lvoyage){
     weather(i)
 };
+
+
+
 
 
 
