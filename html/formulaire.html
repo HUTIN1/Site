@@ -35,14 +35,20 @@
         Allergènes :<br/>
         <textarea cols="30" rows="5" placeholder="Veuillez indiquer le type d'allergène et le nombre de personnes ayant cette allergène"></textarea><br/><br/>
         Nombre d'adulte: 
-        <select name="adulte" id="nb_adulte">   <option value="1">1</option>  <option value="2">2</option>  <option value="3">3</option>  <option value="4">4</option>  <option value="5">5</option>  <option value="6">6</option>  <option value="7" selected="selected">7</option>  <option value="8">8</option>  <option value="9">9</option>  <option value="10">10</option>  <option value="11">11</option>  <option value="12">12</option></select><br/><br/>
+        <element event="some JavaScript">
+        <select name="adulte" id="nb_adulte" onclick="document.getElementById('prix').innerHTML=affiche()">   
+            <option value="1">1</option>  <option value="2">2</option>  <option value="3">3</option>  <option value="4">4</option>  <option value="5">5</option>  <option value="6">6</option>  <option value="7" selected="selected">7</option>  <option value="8">8</option>  <option value="9">9</option>  <option value="10">10</option>  <option value="11">11</option>  <option value="12">12</option></select><br/><br/>
         Nombre d'enfant: 
-        <select name="enfant" id="nb_enfant">  <option value="0">0</option>    <option value="1">1</option>  <option value="2">2</option>  <option value="3">3</option>  <option value="4">4</option>  <option value="5">5</option>  <option value="6">6</option>  <option value="7" selected="selected">7</option>  <option value="8">8</option>  <option value="9">9</option>  <option value="10">10</option>  <option value="11">11</option>  <option value="12">12</option></select><br/><br/>
+        <select name="enfant" id="nb_enfant" onclick="document.getElementById('prix').innerHTML=affiche()">  <option value="0">0</option>    <option value="1">1</option>  <option value="2">2</option>  <option value="3">3</option>  <option value="4">4</option>  <option value="5">5</option>  <option value="6">6</option>  <option value="7" selected="selected">7</option>  <option value="8">8</option>  <option value="9">9</option>  <option value="10">10</option>  <option value="11">11</option>  <option value="12">12</option></select><br/><br/>
+        </element>
     </form>
+    <p id="prix">
+        000
+    </p>
     </div>
-    <p>Prix 600€</p>
     <a href="description_ankara.html"><button class="button"><span>Payer</span></button>
     <a href="projet_site.html"><button class="button"><span>Retour à l'acceuil</span></button>
 
 </body>
+<script type="text/javascript" src="../js/formulaire.js"></script>
 </html>
