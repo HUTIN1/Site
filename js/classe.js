@@ -68,10 +68,4 @@ for (i of lvoyage){
 
 
 
-//.the;n(function(data){
-//console.log("a",data.main.temp);
-//    initialiseWeather(id,data.main.temp,data.weather[0].icon)
-//    })
-//    .catch(function(){});
-//};
 
