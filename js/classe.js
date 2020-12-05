@@ -11,6 +11,7 @@ class Voyage {
         this._idd=idd;
         this._weather="none";
     
+
     }
     set(meteo){
         this._weather=meteo;
@@ -39,6 +40,16 @@ var nb2=new Voyage(
     idd=2
 )
 
+var nb3=new Voyage(
+    ville="Rio",
+    prix=500,
+    image="../images/Rio.jpg",
+    enfant="pas autoriser",
+    repas="salade",
+    animaux="pas autoriser",
+    idd=3
+)
+
 function weather(voyage){
     const key="4c280b90ff25b4fbd57d770d12f45694";
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
@@ -58,7 +69,7 @@ function weather(voyage){
     </div>`});
 };
 
-const lvoyage=[nb1,nb2];
+const lvoyage=[nb1,nb2,nb3];
 
 var div1 = document.getElementsByClassName("toutvoyage")[0];
 
@@ -66,7 +77,25 @@ for (i of lvoyage){
     weather(i)
 };
 
+function croissantprix(lvoyage){
+    var lvoyage2=lvoyage;
+    var voyage =lvoyage[0];
+    var l = [];
+    var index = 0;
+    for (u in voyage){
+        for (i in lvoyage2){
+            if (i._prix < voyage2._prix){
+                voyage=i
+            }
+        }
+        index = lvoyage2.indexOf(voyage);
+        lvoyage2.splice(pos,index);
+        l.push(voyage);
+    }
 
+    return l
+
+};
 
 
 

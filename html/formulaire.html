@@ -28,18 +28,18 @@
         Adresse mail :<br/>
         <input type="email" name="email" placeholder="jean.dupont@gmail.fr"><br/><br/>
 
+        <element event="some JavaScript">
         Petit déjeuner :
-        <input type="radio" name="petit_dej" value="oui" checked>Oui
-        <input type="radio" name="petit_dej" value="non" checked>Non<br/><br/>
+        <input type="radio" id="oui" onclick="document.getElementById('prix').innerHTML=affiche()" name="petit_dej" value="oui" checked>Oui
+        <input type="radio" id="non" onclick="document.getElementById('prix').innerHTML=affiche()" name="petit_dej" value="non" checked>Non<br/><br/>
 
         Allergènes :<br/>
         <textarea cols="30" rows="5" placeholder="Veuillez indiquer le type d'allergène et le nombre de personnes ayant cette allergène"></textarea><br/><br/>
         Date de Départ
-        <input type="date" id="start" name="trip-start" value="2021-01-01" min="2020-01-01" max="3000-12-31"> <br/><br/>
+        <input type="date" id="start" onclick="document.getElementById('prix').innerHTML=affiche()" name="trip-start" value="2021-01-01" min="2020-01-01" max="3000-12-31"> <br/><br/>
         Date de fin
-        <input type="date" id="end" name="trip-end" value="2021-01-01" min="2020-01-01" max="3000-12-31"> <br/><br/>
+        <input type="date" id="end" onclick="document.getElementById('prix').innerHTML=affiche()" name="trip-end" value="2021-01-01" min="2020-01-01" max="3000-12-31"> <br/><br/>
         Nombre d'adulte: 
-        <element event="some JavaScript">
         <select name="adulte" id="nb_adulte" onclick="document.getElementById('prix').innerHTML=affiche()">   
             <option value="0">0<option value="1">1</option>  <option value="2">2</option>  <option value="3">3</option>  <option value="4">4</option>  <option value="5">5</option>  <option value="6">6</option>  <option value="7" selected="selected">7</option>  <option value="8">8</option>  <option value="9">9</option>  <option value="10">10</option>  <option value="11">11</option>  <option value="12">12</option></select><br/><br/>
         Nombre d'enfant: 
@@ -55,4 +55,4 @@
 
 </body>
 <script type="text/javascript" src="../js/formulaire.js"></script>
-</html>
+</html> 

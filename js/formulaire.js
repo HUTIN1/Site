@@ -4,9 +4,14 @@ function affiche(){
     var prix = sessionStorage.getItem("prix")
     var x = document.getElementById("nb_adulte").value;
     var y = document.getElementById("nb_enfant").value;
+    var z = 0
+    if (document.getElementById("oui").checked){
+        console.log("test");
+        z = 1;
+    }
 
 
-    prix = x*prix+y*prix*0.4+12*x*y*datecomp();
+    prix = x*prix+y*prix*0.4+12*(x+y)*datecomp()*z;
     prix.toString()
     return prix+"€"
 };
