@@ -58,6 +58,7 @@ function weather(voyage){
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){ 
         afflater(voyage,data.main.temp);
+        console.log(data);
         });
 };
 
