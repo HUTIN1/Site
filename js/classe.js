@@ -1,7 +1,7 @@
 
 
 class Voyage {
-    constructor(ville,prix,image,enfant,repas,animaux,idd){
+    constructor(ville,prix,image,enfant,repas,animaux,idd,attente){
         this._ville=ville;
         this._prix=prix;
         this._image=image;
@@ -10,6 +10,8 @@ class Voyage {
         this._animaux=animaux;
         this._idd=idd;
         this._weather="none";
+        this._attente=attente;
+
     
 
     }
@@ -27,6 +29,7 @@ var nb1=new Voyage(
     enfant="pas autoriser",
     repas="steak frite",
     animaux="pas autoriser",
+    attente="attente1",
     idd=1
 )
 
@@ -37,6 +40,7 @@ var nb2=new Voyage(
     enfant="pas autoriser",
     repas="couscous",
     animaux="pas autoriser",
+    attente="attente2",
     idd=2
 )
 
@@ -47,6 +51,7 @@ var nb3=new Voyage(
     enfant="pas autoriser",
     repas="salade",
     animaux="pas autoriser",
+    attente="attente3",
     idd=3
 )
 
@@ -55,12 +60,19 @@ function weather(voyage){
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){
         voyage.set(data.main.temp);  
-        affiche(voyage);
+        afflater(voyage);
         });
 };
 
+function afflater(voyage){
+    console.log(voyage._weather,voyage._ville)
+    var str = document.getElementById("toutvoyage").innerHTML; 
+    var res = str.replace(voyage._attente, voyage._weather);
+    document.getElementById("toutvoyage").innerHTML = res;
+}
+
 function affiche(voyage){
-    div1.innerHTML += `<div class="affvoyage">
+    document.getElementById("toutvoyage").innerHTML += `<div class="affvoyage">
         <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
             <li>`+voyage._ville+`</li>
@@ -68,7 +80,7 @@ function affiche(voyage){
             <li>enfant `+voyage._enfant+`</li>
             <li>repas du voyage `+voyage._repas+`</li>
             <li>animaux `+voyage._animaux+`</li>
-            <li>température `+voyage._weather+` °C<li>
+            <li>température `+voyage._attente+` °C<li>
         </ul> 
     </div>`
 };
@@ -77,14 +89,15 @@ const lvoyage=[nb1,nb2,nb3];
 
 var div1 = document.getElementsByClassName("toutvoyage")[0];
 
-oui = croissantprix(lvoyage);
+oui = decroissantprix(lvoyage);
 console.log(oui);
 for (i of oui){
+    affiche(i)
     weather(i)
  
 };
 
-function decroissantprix(lvoyage){
+function croissantprix(lvoyage){
     var lvoyage2 = lvoyage;
     var voyage =lvoyage[0];
     var l = [];
@@ -109,8 +122,8 @@ function decroissantprix(lvoyage){
 };
 
 
-function croissantprix(lvoyage){
-    l = decroissantprix(lvoyage);
+function decroissantprix(lvoyage){
+    l = croissantprix(lvoyage);
     var l2=[];
     for (i of l){
         l2.unshift(i);

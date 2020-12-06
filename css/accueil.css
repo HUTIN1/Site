@@ -21,11 +21,11 @@ img{
     border-radius: 10px;
     margin-top: 1%;
     margin-bottom: 1%;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 
-.toutvoyage
+#toutvoyage
 {
     display: flex;
     flex-direction : column;
