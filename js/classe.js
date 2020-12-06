@@ -11,6 +11,7 @@ class Voyage {
         this._idd=idd;
         this._weather="none";
     
+
     }
     set(meteo){
         this._weather=meteo;
@@ -39,12 +40,21 @@ var nb2=new Voyage(
     idd=2
 )
 
+var nb3=new Voyage(
+    ville="Rio",
+    prix=500,
+    image="../images/Rio.jpg",
+    enfant="pas autoriser",
+    repas="salade",
+    animaux="pas autoriser",
+    idd=3
+)
+
 function weather(voyage){
     const key="4c280b90ff25b4fbd57d770d12f45694";
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){
-        voyage.set(data.main.temp);
-        console.log(voyage);   
+        voyage.set(data.main.temp);   
         div1.innerHTML += `<div class="affvoyage">
         <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
@@ -58,14 +68,39 @@ function weather(voyage){
     </div>`});
 };
 
-const lvoyage=[nb1,nb2];
+const lvoyage=[nb1,nb2,nb3];
 
 var div1 = document.getElementsByClassName("toutvoyage")[0];
 
-for (i of lvoyage){
+oui = croissantprix(lvoyage);
+console.log(oui);
+for (i of oui){
     weather(i)
 };
 
+function croissantprix(lvoyage){
+    var lvoyage2 = lvoyage;
+    var voyage =lvoyage[0];
+    var l = [];
+    var index = 0;
+    var len = lvoyage.length;
+    var u = 0;
+    for (; u < len ;){
+        u+=1;
+        for (i in lvoyage2){
+            if (lvoyage2[i]._prix < voyage._prix){
+                voyage=lvoyage2[i]
+            }
+        }
+        index = lvoyage2.indexOf(voyage);
+        lvoyage2.splice(index,1);
+        l.push(voyage);
+        voyage = lvoyage2[0];
+    }
+
+    return l
+
+};
 
 
 
