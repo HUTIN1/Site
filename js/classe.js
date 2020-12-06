@@ -55,6 +55,7 @@ function weather(voyage){
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){
         voyage.set(data.main.temp);  
+        affiche(voyage);
         });
 };
 
@@ -76,14 +77,14 @@ const lvoyage=[nb1,nb2,nb3];
 
 var div1 = document.getElementsByClassName("toutvoyage")[0];
 
-oui = decroissantprix(lvoyage);
+oui = croissantprix(lvoyage);
 console.log(oui);
 for (i of oui){
     weather(i)
-    affiche(i)
+ 
 };
 
-function croissantprix(lvoyage){
+function decroissantprix(lvoyage){
     var lvoyage2 = lvoyage;
     var voyage =lvoyage[0];
     var l = [];
@@ -108,8 +109,8 @@ function croissantprix(lvoyage){
 };
 
 
-function decroissantprix(lvoyage){
-    l = croissantprix(lvoyage);
+function croissantprix(lvoyage){
+    l = decroissantprix(lvoyage);
     var l2=[];
     for (i of l){
         l2.unshift(i);
