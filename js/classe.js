@@ -20,49 +20,50 @@ class Voyage {
 };
 
 
+function initialise(){
+    var nb1=new Voyage(
+        ville="Monaco",
+        prix=100,
+        image="../images/monaco.jpg",
+        enfant="pas autoriser",
+        repas="steak frite",
+        animaux="pas autoriser",
+        idd="01"
+    )
 
-var nb1=new Voyage(
-    ville="Monaco",
-    prix=100,
-    image="../images/monaco.jpg",
-    enfant="pas autoriser",
-    repas="steak frite",
-    animaux="pas autoriser",
-    idd="01"
-)
+    var nb2=new Voyage(
+        ville="Ankara",
+        prix=300,
+        image="../images/ankara.jpg",
+        enfant="pas autoriser",
+        repas="couscous",
+        animaux="pas autoriser",
+        idd="02"
+    )
 
-var nb2=new Voyage(
-    ville="Ankara",
-    prix=300,
-    image="../images/ankara.jpg",
-    enfant="pas autoriser",
-    repas="couscous",
-    animaux="pas autoriser",
-    idd="02"
-)
+    var nb3=new Voyage(
+        ville="Rio",
+        prix=500,
+        image="../images/Rio.jpg",
+        enfant="pas autoriser",
+        repas="salade",
+        animaux="pas autoriser",
+        idd="03"
+    )
 
-var nb3=new Voyage(
-    ville="Rio",
-    prix=500,
-    image="../images/Rio.jpg",
-    enfant="pas autoriser",
-    repas="salade",
-    animaux="pas autoriser",
-    idd="03"
-)
-
+    return [nb1,nb2,nb3]
+}
 function weather(voyage){
     const key="4c280b90ff25b4fbd57d770d12f45694";
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
-    fetch(url).then(function(resp) { return resp.json()}).then(function(data){
-        voyage.set(data.main.temp);  
-        afflater(voyage);
+    fetch(url).then(function(resp) { return resp.json()}).then(function(data){ 
+        afflater(voyage,data.main.temp);
         });
 };
 
-function afflater(voyage){
+function afflater(voyage,meteo){
     var str = document.getElementById(voyage._ville+"5").innerHTML;
-    var res = str.replace(/attendre/g, voyage._weather);
+    var res = str.replace(/none/g, meteo);
     document.getElementById(voyage._ville+"5").innerHTML = res;
 }
 
@@ -75,16 +76,15 @@ function affiche(voyage){
             <li>enfant `+voyage._enfant+`</li>
             <li>repas du voyage `+voyage._repas+`</li>
             <li>animaux `+voyage._animaux+`</li>
-            <li>température attendre °C</li>
+            <li>température `+voyage._weather+` °C</li>
         </ul> 
     </div>`
 };
 
-const lvoyage=[nb1,nb2,nb3];
 
-oui = decroissantprix(lvoyage);
-console.log(oui);
-for (i of oui){
+
+
+for (i of initialise()){
     affiche(i)
     weather(i)
  
@@ -128,9 +128,71 @@ function paenfant(lvoyage){
     var l = [];
     for (voyage of lvoyage){
         if (voyage._enfant == "pas autoriser"){
-            l.push(voyage)
+            l.push(voyage);
         }
     }
     return l
 }
 
+function ouienfant(lvoyage){
+    var l = [];
+    for (voyage of lvoyage){
+        if(voyage._enfant == "autoriser"){
+            l.push(voyage);
+        }
+    }
+    return l
+}
+
+
+function panimaux(lvoyage){
+    var l=[];
+    for (voyage of lvoyage){
+        if (voyage._animaux == "pas autoriser"){
+            l.push(voyage);
+        }
+    }
+    return l
+}
+
+function ouianimaux(lvoyage){
+    var l=[];
+    for (voyage of lvoyage){
+        if (voyage._animaux == "autoriser"){
+            l.push(voyage);
+        }
+    }
+    return l
+}
+
+function tries(){
+    var l=initialise();
+    console.log(l,"deb");
+    var animaux = document.getElementById("animaux").value;
+    var enfant = document.getElementById("enfant").value;
+    var ordre = document.getElementById("ordre").value;
+    if (ordre == "croissant"){
+        l=croissantprix(l);
+    }else if(ordre == "decroissant"){
+        l=decroissantprix(l);
+    }
+
+    if (animaux == "autoriser"){
+        l=ouianimaux(l);
+    } else if (animaux == "pas autoriser"){
+        l=panimaux(l);
+    }
+
+    if(enfant == "autoriser"){
+        l=ouienfant(l);
+    } else if (enfant == "pas autoriser"){
+        l=paenfant(l);
+    }
+
+    console.log(l,"fin");
+    document.getElementById("toutvoyage").innerHTML="";
+    for (voyage of l){
+        affiche(voyage);
+        weather(voyage);
+    }
+}
