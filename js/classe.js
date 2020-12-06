@@ -54,7 +54,7 @@ function weather(voyage){
     const key="4c280b90ff25b4fbd57d770d12f45694";
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){
-        voyage.set(data.main.temp);   
+        voyage.set(data.main.temp);  
         });
 };
 
@@ -63,11 +63,11 @@ function affiche(voyage){
         <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
             <li>`+voyage._ville+`</li>
-            <li>prix`+voyage._prix+`</li>
+            <li>prix `+voyage._prix+` €</li>
             <li>enfant `+voyage._enfant+`</li>
             <li>repas du voyage `+voyage._repas+`</li>
             <li>animaux `+voyage._animaux+`</li>
-            <li>température`+voyage._weather+`<li>
+            <li>température `+voyage._weather+` °C<li>
         </ul> 
     </div>`
 };
@@ -76,7 +76,7 @@ const lvoyage=[nb1,nb2,nb3];
 
 var div1 = document.getElementsByClassName("toutvoyage")[0];
 
-oui = croissantprix(lvoyage);
+oui = decroissantprix(lvoyage);
 console.log(oui);
 for (i of oui){
     weather(i)
@@ -108,6 +108,22 @@ function croissantprix(lvoyage){
 };
 
 
+function decroissantprix(lvoyage){
+    l = croissantprix(lvoyage);
+    var l2=[];
+    for (i of l){
+        l2.unshift(i);
+    }
+    return l2
+};
 
-
+function paenfant(lvoyage){
+    var l = [];
+    for (voyage of lvoyage){
+        if (voyage._enfant == "pas autoriser"){
+            l.push(voyage)
+        }
+    }
+    return l
+}
 
