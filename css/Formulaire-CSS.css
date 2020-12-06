@@ -12,6 +12,7 @@ input[type=text] {
   margin-bottom: 16px;
   resize: vertical;
 }
+
 input[type=number],[type=tel], [type=email], textarea{
   width: 27%;
   padding: 10px;
