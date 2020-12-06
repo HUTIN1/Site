@@ -55,7 +55,11 @@ function weather(voyage){
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){
         voyage.set(data.main.temp);   
-        div1.innerHTML += `<div class="affvoyage">
+        });
+};
+
+function affiche(voyage){
+    div1.innerHTML += `<div class="affvoyage">
         <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
             <li>`+voyage._ville+`</li>
@@ -65,7 +69,7 @@ function weather(voyage){
             <li>animaux `+voyage._animaux+`</li>
             <li>température`+voyage._weather+`<li>
         </ul> 
-    </div>`});
+    </div>`
 };
 
 const lvoyage=[nb1,nb2,nb3];
@@ -76,6 +80,7 @@ oui = croissantprix(lvoyage);
 console.log(oui);
 for (i of oui){
     weather(i)
+    affiche(i)
 };
 
 function croissantprix(lvoyage){
@@ -101,12 +106,6 @@ function croissantprix(lvoyage){
     return l
 
 };
-
-let template = docuemnt.querySelector("#pk");
-let clone = document.importNode(template.content, true);
-newContent = clone.firstElementChild.innerHTML.replace(/{{oui}}/g,yes);
-clone.firstElementChild.innerHTML = newContent
-document.body.appendChild(clone);
 
 
 
