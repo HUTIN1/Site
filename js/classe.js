@@ -102,6 +102,11 @@ function croissantprix(lvoyage){
 
 };
 
+let template = docuemnt.querySelector("#pk");
+let clone = document.importNode(template.content, true);
+newContent = clone.firstElementChild.innerHTML.replace(/{{oui}}/g,yes);
+clone.firstElementChild.innerHTML = newContent
+document.body.appendChild(clone);
 
 
 
