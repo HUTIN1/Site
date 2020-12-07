@@ -32,20 +32,22 @@ html {
   padding: 0 16px;
 }
 #myBtn {
-  display: none; 
-  position: fixed; 
-  bottom: 20px; 
-  right: 30px; 
-  z-index: 99; 
-  background-color: #808080; 
-  color: white; 
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  background: none;
   cursor: pointer;
-  padding: 15px; 
-  border-radius: 50%; 
-  font-size: 180px; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: .25em;
+  width: 40px;
+  height: 40px;
+  background-color: #F8F8F8;
 }
-
-
 
 .title {
 
