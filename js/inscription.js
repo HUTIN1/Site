@@ -13,8 +13,7 @@ function app(){
         email : pemail,
         tel : ptel,
         mdp : pmdp
-    }
-    console.log(sessionStorage.getItem("inscri"));
+    };
     var v = 0;
     var len = 4;
     var u = 0;
@@ -25,9 +24,10 @@ function app(){
     }
     if (v == 0){
         var i=0;
-        while( typeof(sessionStorage.getItem(i.toString()+"inscrinom") == "string")){
+        var typ=typeof(sessionStorage.getItem(i.toString()+"inscrinom"))
+        while(  typ == "string"){
             i+=1;
-            console.log(i);
+            typ=typeof(sessionStorage.getItem(i.toString()+"inscrinom"))
         }
         for (; u < len;){
             sessionStorage.setItem("utilisateur"+l2[u],l[u]);
@@ -36,7 +36,6 @@ function app(){
         }
         document.location.href="projet_site.html";
     } else {
-        console.log("pas rempli");
         document.getElementById("alerte").innerHTML = "Veuillir donner toutes vos information "
     }
 }

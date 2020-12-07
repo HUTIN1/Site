@@ -47,3 +47,12 @@ function datecomp(){
     return diffjour
 }
 
+function autorempli(){
+    var typ= typeof(sessionStorage.getItem("utilisateurnom"));
+    const l =["nom","prenom","tel","email"]
+    if (typ == "string"){
+        for (i of l){
+            document.getElementById(i).value = sessionStorage.getItem("utilisateur"+i);
+        }
+    }
+}

@@ -83,9 +83,11 @@ function affiche(voyage){
 };
 
 var i = 0
-while (typeof(sessionStorage.getItem(i.toString()+'inscrinom'))){
+var typ =typeof(sessionStorage.getItem(i.toString()+'inscrinom'));
+while (typ == "string"){
     console.log(sessionStorage.getItem(i.toString()+'inscrinom'));
     i+=1;
+    typ =typeof(sessionStorage.getItem(i.toString()+'inscrinom'));
 }
 
 
