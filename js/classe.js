@@ -92,7 +92,6 @@ function affiche(voyage){
 };
 
 
-
 for (i of initialise()){
     affiche(i)
     weather(i)
@@ -207,25 +206,6 @@ function tries(){
     }
 }
 
-<<<<<<< HEAD
-
-var mybutton = document.getElementById("myBtn");
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-
-  document.documentElement.scrollTop = 0; 
-}
-=======
 function encadrement(lvoyage){
     var l = [];
     var min = document.getElementById("min").value
@@ -238,4 +218,3 @@ function encadrement(lvoyage){
     }
     return l
 }
->>>>>>> a80c7d26cb842d76065b1c3de9f387c7cbe8dee4
