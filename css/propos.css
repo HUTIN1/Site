@@ -13,11 +13,11 @@ html {
 
 .colonne {
   float: left;
-  width: 50%;
+  width: 100%;
   margin-bottom: 16px;
-  padding: 0 8px
-  display: inline-flex;
-  flex-direction: column;
+  padding: 0 8px;
+  display : flex;
+  flex-direction: row-reverse;
 }
 
 
