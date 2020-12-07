@@ -34,6 +34,17 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.buttonMenu {
+  border-style: solid;
+
+  display: inline-block;
+  padding: 8px;
+  color: black;
+  background-color: #F9CABF;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+}
 
 
 .container {
