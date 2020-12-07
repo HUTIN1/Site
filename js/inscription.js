@@ -36,7 +36,11 @@ function app(){
         }
         document.location.href="projet_site.html";
     } else {
+<<<<<<< HEAD
         document.getElementById("alerte").innerHTML = "Veuiller donner toutes vos informations "
+=======
+        document.getElementById("alerte").innerHTML = "Veuillir donner toutes vos informations "
+>>>>>>> f448e4a92b35a0b087c572911f62a5e8736dd3ed
     }
 }
 
