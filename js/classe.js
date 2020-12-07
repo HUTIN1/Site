@@ -28,7 +28,7 @@ function initialise(){
         enfant="pas autoriser",
         repas="steak frite",
         animaux="pas autoriser",
-        idd="01"
+        idd=1
     )
 
     var nb2=new Voyage(
@@ -38,7 +38,7 @@ function initialise(){
         enfant="pas autoriser",
         repas="couscous",
         animaux="pas autoriser",
-        idd="02"
+        idd=2
     )
 
     var nb3=new Voyage(
@@ -48,17 +48,9 @@ function initialise(){
         enfant="pas autoriser",
         repas="salade",
         animaux="pas autoriser",
-        idd="03"
+        idd=3
     )
-    var nb3=new Voyage(
-        ville="Rio",
-        prix=500,
-        image="../images/Rio.jpg",
-        enfant="pas autoriser",
-        repas="salade",
-        animaux="pas autoriser",
-        idd="03"
-    )
+
     var nb4=new Voyage(
         ville="Porto",
         prix=200,
@@ -66,7 +58,7 @@ function initialise(){
         enfant="autoriser",
         repas="morue",
         animaux="autoriser",
-        idd="04"
+        idd=4
     )
 
     return [nb1,nb2,nb3,nb4]
