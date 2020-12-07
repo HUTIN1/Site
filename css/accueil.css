@@ -30,3 +30,15 @@ img{
     display: flex;
     flex-direction : column;
 }
+
+.buttonMenu {
+    border-style: solid;
+  
+    display: inline-block;
+    padding: 8px;
+    color: black;
+    background-color: #EC981F;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+  }
