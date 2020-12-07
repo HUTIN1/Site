@@ -90,3 +90,20 @@ input[type=submit] {
   opacity: 2;
   right: 0;
 }
+#myBtn {
+  transition: all .25s;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px 10px 0;
+  border-radius: 50%;
+  padding: 2px;
+  width: 40px;
+  height: 40px;
+  background-color: #F8F8F8;
+}
