@@ -215,8 +215,6 @@ function tries(){
     }
 }
 
-<<<<<<< HEAD
-=======
 
 var mybutton = document.getElementById("myBtn");
 
@@ -235,7 +233,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0; 
 }
 
->>>>>>> fef3b64aa59df66661626d7d24c5c2ef732fb013
 function encadrement(lvoyage){
     var l = [];
     var min = document.getElementById("min").value
@@ -248,7 +245,3 @@ function encadrement(lvoyage){
     }
     return l
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> fef3b64aa59df66661626d7d24c5c2ef732fb013
