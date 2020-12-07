@@ -59,8 +59,17 @@ function initialise(){
         animaux="pas autoriser",
         idd="03"
     )
+    var nb4=new Voyage(
+        ville="Porto",
+        prix=200,
+        image="../images/Porto.jpg",
+        enfant="pas autoriser",
+        repas="morue",
+        animaux="pas autoriser",
+        idd="04"
+    )
 
-    return [nb1,nb2,nb3]
+    return [nb1,nb2,nb3,nb4]
 }
 function weather(voyage){
     const key="4c280b90ff25b4fbd57d770d12f45694";
