@@ -2,6 +2,14 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
+h2{
+  padding: 50px;
+  text-align: center;
+  background-color: #f3cae9;
+  color: white;
+}
+
+
 input[type=text] {
   width: 27%;
   padding: 12px;

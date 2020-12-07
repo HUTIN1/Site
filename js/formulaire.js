@@ -50,7 +50,7 @@ function datecomp(){
     return diffjour
 }
 
-function autorempli(){
+function autorempli(){//Fonction qui permet de remplir directement le formulaire avec les informations saisis lors de l'inscription
     var typ= typeof(sessionStorage.getItem("utilisateurnom"));
     const l =["nom","prenom","tel","email"]
     if (typ == "string"){

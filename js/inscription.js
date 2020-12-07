@@ -1,4 +1,4 @@
-function app(){
+function app(){//FOnction qui permet à l'utilisateur de s'inscrire
     console.log("bouton");
     var pnom = document.getElementById("nom").value
     var pprenom = document.getElementById("prenom").value

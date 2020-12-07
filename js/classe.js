@@ -20,7 +20,7 @@ class Voyage {
 };
 
 
-function initialise(){
+function initialise(){//Initialisation de l'ensemble des voyages
     var nb1=new Voyage(
         ville="Monaco",
         prix=100,
@@ -78,7 +78,7 @@ function afflater(voyage,meteo){
     document.getElementById(voyage._ville+"5").innerHTML = res;
 }
 
-function affiche(voyage){
+function affiche(voyage){//Fonction qui permet d'afficher le nom du voyage, accompagné d'une image et de de description
     document.getElementById("toutvoyage").innerHTML += `<div class="affvoyage" id=`+voyage._ville+`5>
         <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
@@ -100,7 +100,7 @@ for (i of initialise()){
  
 };
 
-function croissantprix(lvoyage){
+function croissantprix(lvoyage){//Fonction qui permet de trier les voyages selon le prix par ordre croissant
     var lvoyage2 = lvoyage;
     var voyage =lvoyage[0];
     var l = [];
@@ -125,7 +125,7 @@ function croissantprix(lvoyage){
 };
 
 
-function decroissantprix(lvoyage){
+function decroissantprix(lvoyage){//Fonction qui permet de trier les voyages selon le prix par ordre décroissant
     l = croissantprix(lvoyage);
     var l2=[];
     for (i of l){
@@ -134,7 +134,7 @@ function decroissantprix(lvoyage){
     return l2
 };
 
-function paenfant(lvoyage){
+function paenfant(lvoyage){//Fonction qui permet d'afficher uniquement les voyages où les enfants sont non autorisés
     var l = [];
     for (voyage of lvoyage){
         if (voyage._enfant == "pas autoriser"){
@@ -144,7 +144,7 @@ function paenfant(lvoyage){
     return l
 }
 
-function ouienfant(lvoyage){
+function ouienfant(lvoyage){//Fonction qui permet d'afficher uniquement les voyages où les animaux sont autorisés
     var l = [];
     for (voyage of lvoyage){
         if(voyage._enfant == "autoriser"){
@@ -155,7 +155,7 @@ function ouienfant(lvoyage){
 }
 
 
-function panimaux(lvoyage){
+function panimaux(lvoyage){//Fonction qui permet d'afficher uniquement les voyages où les animaux sont pas autorisés
     var l=[];
     for (voyage of lvoyage){
         if (voyage._animaux == "pas autoriser"){
@@ -165,7 +165,7 @@ function panimaux(lvoyage){
     return l
 }
 
-function ouianimaux(lvoyage){
+function ouianimaux(lvoyage){//Fonction qui permet d'afficher uniquement les voyages où les animaux sont autorisés
     var l=[];
     for (voyage of lvoyage){
         if (voyage._animaux == "autoriser"){
@@ -213,7 +213,7 @@ var mybutton = document.getElementById("myBtn");
 
 window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
+function scrollFunction() { //Fonction qui détecte si l'utilisateur scroll pour afficher le bouton "retour vers le haut"
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
@@ -221,12 +221,12 @@ function scrollFunction() {
   }
 }
 
-function topFunction() {
+function topFunction() { // Fonction qui permet de retourner en haut de la page
 
   document.documentElement.scrollTop = 0; 
 }
 
-function encadrement(lvoyage){
+function encadrement(lvoyage){ // Fonction qui permet d'afficher les voyages compris entre une fourchette de prix
     var l = [];
     var min = document.getElementById("min").value
     var max = document.getElementById("max").value
