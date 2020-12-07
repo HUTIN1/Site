@@ -75,3 +75,18 @@ function topFunction() {
 
   document.documentElement.scrollTop = 0; 
 }
+
+
+function ajoupanier(){
+    var i = 0;
+    const prix = affiche();
+    var typ = typeof(sessionStorage.getItem(i.toString()+"panierville"))
+    while (typ == "string"){
+        i+=1;
+    }
+    sessionStorage.setItem(i.toString()+"panierville",sessionStorage.getItem("ville"));
+    sessionStorage.setItem(i.toString()+"panierprix",prix);
+    sessionStorage.setItem(i.toString()+"panierstart",document.getElementById("start").value)
+    sessionStorage.setItem(i.toString()+"panierend",document.getElementById("end").value)
+
+}
