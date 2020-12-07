@@ -91,11 +91,6 @@ function affiche(voyage){
     </div>`
 };
 
-var i = 0
-console.log(sessionStorage.getItem('utilisateurnom'));
-
-
-
 
 
 for (i of initialise()){
@@ -185,6 +180,7 @@ function tries(){
     var animaux = document.getElementById("animaux").value;
     var enfant = document.getElementById("enfant").value;
     var ordre = document.getElementById("ordre").value;
+    l=encadrement(l)
     if (ordre == "croissant"){
         l=croissantprix(l);
     }else if(ordre == "decroissant"){
@@ -211,3 +207,15 @@ function tries(){
     }
 }
 
+function encadrement(lvoyage){
+    var l = [];
+    var min = document.getElementById("min").value
+    var max = document.getElementById("max").value
+    for (i of lvoyage){
+        prix = i._prix
+        if (min <= prix && prix<=max){
+            l.push(i);
+        }
+    }
+    return l
+}
