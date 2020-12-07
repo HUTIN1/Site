@@ -50,6 +50,15 @@ function initialise(){
         animaux="pas autoriser",
         idd="03"
     )
+    var nb3=new Voyage(
+        ville="Rio",
+        prix=500,
+        image="../images/Rio.jpg",
+        enfant="pas autoriser",
+        repas="salade",
+        animaux="pas autoriser",
+        idd="03"
+    )
 
     return [nb1,nb2,nb3]
 }
