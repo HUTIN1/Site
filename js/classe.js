@@ -101,7 +101,6 @@ function affiche(voyage){
 };
 
 
-
 for (i of initialise()){
     affiche(i)
     weather(i)
@@ -246,4 +245,3 @@ function encadrement(lvoyage){
     }
     return l
 }
-
