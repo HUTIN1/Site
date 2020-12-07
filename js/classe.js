@@ -63,7 +63,7 @@ function initialise(){//Initialisation de l'ensemble des voyages
 
     return [nb1,nb2,nb3,nb4]
 }
-function weather(voyage){
+function weather(voyage){//Fonction qui permet de connaitre la météo de la ville
     const key="4c280b90ff25b4fbd57d770d12f45694";
     var url="https://api.openweathermap.org/data/2.5/weather?q="+voyage._ville+"&units=metric&appid="+key;
     fetch(url).then(function(resp) { return resp.json()}).then(function(data){ 
@@ -72,7 +72,7 @@ function weather(voyage){
         });
 };
 
-function afflater(voyage,meteo){
+function afflater(voyage,meteo){//Fonction qui permet d'afficher la météo de la ville
     var str = document.getElementById(voyage._ville+"5").innerHTML;
     var res = str.replace(/none/g, meteo);
     document.getElementById(voyage._ville+"5").innerHTML = res;
@@ -175,7 +175,7 @@ function ouianimaux(lvoyage){//Fonction qui permet d'afficher uniquement les voy
     return l
 }
 
-function tries(){
+function tries(){//Fonction qui permet de trier les voyages selon les critères de l'utilisateur
     var l=initialise();
     console.log(l,"deb");
     var animaux = document.getElementById("animaux").value;
