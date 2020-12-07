@@ -63,9 +63,9 @@ function initialise(){
         ville="Porto",
         prix=200,
         image="../images/Porto.jpg",
-        enfant="pas autoriser",
+        enfant="autoriser",
         repas="morue",
-        animaux="pas autoriser",
+        animaux="autoriser",
         idd="04"
     )
 
