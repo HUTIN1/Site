@@ -59,8 +59,17 @@ function initialise(){
         animaux="pas autoriser",
         idd="03"
     )
+    var nb4=new Voyage(
+        ville="Porto",
+        prix=200,
+        image="../images/Porto.jpg",
+        enfant="pas autoriser",
+        repas="morue",
+        animaux="pas autoriser",
+        idd="04"
+    )
 
-    return [nb1,nb2,nb3]
+    return [nb1,nb2,nb3,nb4]
 }
 function weather(voyage){
     const key="4c280b90ff25b4fbd57d770d12f45694";
@@ -206,6 +215,27 @@ function tries(){
     }
 }
 
+<<<<<<< HEAD
+=======
+
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+
+  document.documentElement.scrollTop = 0; 
+}
+
+>>>>>>> fef3b64aa59df66661626d7d24c5c2ef732fb013
 function encadrement(lvoyage){
     var l = [];
     var min = document.getElementById("min").value
@@ -218,3 +248,7 @@ function encadrement(lvoyage){
     }
     return l
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fef3b64aa59df66661626d7d24c5c2ef732fb013
