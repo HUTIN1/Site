@@ -16,7 +16,7 @@ html {
   width: 50%;
   margin-bottom: 16px;
   padding: 0 8px
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
 }
 
@@ -32,7 +32,7 @@ html {
   padding: 0 16px;
 }
 #myBtn {
-  transition: all .25s ease-in-out;
+  transition: all .25s;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -41,9 +41,9 @@ html {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  margin: 0 3em 3em 0;
+  margin: 0 10px 10px 0;
   border-radius: 50%;
-  padding: .25em;
+  padding: 2px;
   width: 40px;
   height: 40px;
   background-color: #F8F8F8;
