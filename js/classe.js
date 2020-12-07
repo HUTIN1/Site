@@ -207,7 +207,6 @@ function tries(){
     }
 }
 
-<<<<<<< HEAD
 
 var mybutton = document.getElementById("myBtn");
 
@@ -225,7 +224,7 @@ function topFunction() {
 
   document.documentElement.scrollTop = 0; 
 }
-=======
+
 function encadrement(lvoyage){
     var l = [];
     var min = document.getElementById("min").value
@@ -238,4 +237,4 @@ function encadrement(lvoyage){
     }
     return l
 }
->>>>>>> a80c7d26cb842d76065b1c3de9f387c7cbe8dee4
+
