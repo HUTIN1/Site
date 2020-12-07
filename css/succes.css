@@ -2,3 +2,15 @@
 font-size: 32px;
 text-align: center;
 }
+.buttonMenu {
+    border-style: solid;
+  
+    display: inline-block;
+    padding: 8px;
+    color: black;
+    background-color: #E6DEDC;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+  }
+  
