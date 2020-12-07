@@ -82,7 +82,11 @@ function affiche(voyage){
     </div>`
 };
 
-
+var i = 0
+while (typeof(sessionStorage.getItem(i.toString()+'inscrinom'))){
+    console.log(sessionStorage.getItem(i.toString()+'inscrinom'));
+    i+=1;
+}
 
 
 for (i of initialise()){
