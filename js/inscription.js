@@ -36,7 +36,7 @@ function app(){
         }
         document.location.href="projet_site.html";
     } else {
-        document.getElementById("alerte").innerHTML = "Veuillir donner toutes vos information "
+        document.getElementById("alerte").innerHTML = "Veuillir donner toutes vos informations "
     }
 }
 
