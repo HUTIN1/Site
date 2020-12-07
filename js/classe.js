@@ -94,7 +94,7 @@ function affiche(voyage){//Fonction qui permet d'afficher le nom du voyage, acco
 
 
 
-for (i of initialise()){
+for (i of initialise()){ // affiche tout les voyages à l'ouverture de la page
     affiche(i)
     weather(i)
  

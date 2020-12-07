@@ -18,7 +18,7 @@ function affiche(){//Fonction qui va retourner le prix du voyage en fonction du 
 
 
 
-function datecomp(){
+function datecomp(){  //fonction qui compte le nombre de jour entre le début et la fin du séjour
     L=[31,28,31,30,31,30,31,31,30,31,30,31];
     var start = document.getElementById("start").value;
     var end = document.getElementById("end").value;
@@ -76,17 +76,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0; 
 }
 
-
-function ajoupanier(){
-    var i = 0;
-    const prix = affiche();
-    var typ = typeof(sessionStorage.getItem(i.toString()+"panierville"))
-    while (typ == "string"){
-        i+=1;
-    }
-    sessionStorage.setItem(i.toString()+"panierville",sessionStorage.getItem("ville"));
-    sessionStorage.setItem(i.toString()+"panierprix",prix);
-    sessionStorage.setItem(i.toString()+"panierstart",document.getElementById("start").value)
-    sessionStorage.setItem(i.toString()+"panierend",document.getElementById("end").value)
-
-}
