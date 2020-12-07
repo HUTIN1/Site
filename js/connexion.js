@@ -1,4 +1,4 @@
-function app(){
+function app(){//Fonction qui permet à l'utilisateur de se connecter à son comptre
     var nom = document.getElementById("nom").value
     var mdp = document.getElementById("mdp").value
     var i =0;
