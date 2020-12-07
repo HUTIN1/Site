@@ -1,10 +1,12 @@
 
 
 function affiche(){
-    var prix = sessionStorage.getItem("prix")
+    var prix = sessionStorage.getItem('prix')
+    console.log(prix);
     var x = document.getElementById("nb_adulte").value;
     var y = document.getElementById("nb_enfant").value;
     var z = 0
+
     if (document.getElementById("oui").checked){
         console.log("test");
         z = 1;
@@ -12,6 +14,7 @@ function affiche(){
 
 
     prix = x*prix+y*prix*0.4+12*(x+y)*datecomp()*z;
+    console.log(prix);
     prix.toString()
     return prix+"€"
 };
@@ -74,19 +77,4 @@ window.onscroll = function() {scrollFunction()};
 function topFunction() {
 
   document.documentElement.scrollTop = 0; 
-}
-
-
-function ajoupanier(){
-    var i = 0;
-    const prix = affiche();
-    var typ = typeof(sessionStorage.getItem(i.toString()+"panierville"))
-    while (typ == "string"){
-        i+=1;
-    }
-    sessionStorage.setItem(i.toString()+"panierville",sessionStorage.getItem("ville"));
-    sessionStorage.setItem(i.toString()+"panierprix",prix);
-    sessionStorage.setItem(i.toString()+"panierstart",document.getElementById("start").value)
-    sessionStorage.setItem(i.toString()+"panierend",document.getElementById("end").value)
-
 }

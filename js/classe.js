@@ -80,7 +80,7 @@ function afflater(voyage,meteo){
 
 function affiche(voyage){
     document.getElementById("toutvoyage").innerHTML += `<div class="affvoyage" id=`+voyage._ville+`5>
-        <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="cookie(`+voyage._idd+`)"></a>
+        <a href="formulaire.html" ><img src="`+voyage._image+`" alt="Photo"`+voyage._ville+` onclick="sessionStorage.setItem('prix',`+voyage._prix+`)"></a>
         <ul>
             <li>`+voyage._ville+`</li>
             <li>prix `+voyage._prix+` €</li>
@@ -92,11 +92,7 @@ function affiche(voyage){
     </div>`
 };
 
-function cookie(n){
-    const voyage = initialise()[n-1];
-    sessionStorage.setItem("prix",voyage._prix);
-    sessionStorage.setItem("ville",voyage._ville);
-};
+
 
 for (i of initialise()){
     affiche(i)
@@ -213,6 +209,9 @@ function tries(){
 }
 
 
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -221,9 +220,6 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-var mybutton = document.getElementById("myBtn");
-
-window.onscroll = function() {scrollFunction()};
 
 function topFunction() {
 
