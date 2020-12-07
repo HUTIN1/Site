@@ -29,7 +29,7 @@ function app(){
             i+=1;
             typ=typeof(sessionStorage.getItem(i.toString()+"inscrinom"))
         }
-        for (; u < len;){
+        for (; u <= len;){
             sessionStorage.setItem("utilisateur"+l2[u],l[u]);
             sessionStorage.setItem(i.toString()+"inscri"+l2[u],l[u]);
             u = u + 1;

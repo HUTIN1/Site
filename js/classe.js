@@ -92,12 +92,10 @@ function affiche(voyage){
 };
 
 var i = 0
-var typ =typeof(sessionStorage.getItem(i.toString()+'inscrinom'));
-while (typ == "string"){
-    console.log(sessionStorage.getItem(i.toString()+'inscrinom'));
-    i+=1;
-    typ =typeof(sessionStorage.getItem(i.toString()+'inscrinom'));
-}
+console.log(sessionStorage.getItem('utilisateurnom'));
+
+
+
 
 
 for (i of initialise()){
